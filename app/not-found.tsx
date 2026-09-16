@@ -1,0 +1,1 @@
+export default function NotFound(){return <main className="error-page"><p>404</p><h1>Sayfa bulunamadı / Page not found</h1><p>Aradığınız sayfa mevcut değil. / The requested page does not exist.</p><a className="button" href="/tr">Türkçe ana sayfa</a> <a className="button" href="/en">English homepage</a></main>}
