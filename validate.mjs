@@ -1,5 +1,5 @@
 import fs from 'node:fs/promises';
-const base='http://localhost:3001';
+const base=process.env.SITE_BASE_URL||'http://localhost:3001';
 const sitemap=await (await fetch(base+'/sitemap.xml')).text();
 const pages=[...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(x=>new URL(x[1]).pathname);
 const errors=[];const titles=new Set();const descriptions=new Set();const allAssets=new Set();
@@ -11,3 +11,4 @@ const bad=await fetch(base+'/en/does-not-exist');if(bad.status!==404)errors.push
 const home=await fetch(base+'/',{redirect:'manual'});if(![307,308].includes(home.status)||home.headers.get('location')!='/tr')errors.push('root redirect');
 console.log(JSON.stringify({pages:pages.length,uniqueTitles:titles.size,uniqueDescriptions:descriptions.size,images:allAssets.size,errors},null,2));
 await fs.mkdir('outputs',{recursive:true});await fs.writeFile('outputs/validation.json',JSON.stringify({pages:pages.length,uniqueTitles:titles.size,uniqueDescriptions:descriptions.size,images:allAssets.size,errors},null,2));if(errors.length)process.exitCode=1;
+

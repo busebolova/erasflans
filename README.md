@@ -29,3 +29,13 @@ node validate.mjs (development server at localhost:3001)
 npm run build
 
 The route check verifies all 84 pages, metadata uniqueness, HTML language, canonical, hreflang, JSON-LD, local links, images, root redirect and unknown-route 404. No browser visual QA or live Core Web Vitals measurement was performed.
+
+## Visual refresh v3
+
+Header uses sticky positioning at the top in desktop and mobile layouts. The preloader appears on first visit and reload, exits after 900 ms, and has a CSS failsafe.
+
+New illustrative CNC footage: https://mixkit.co/free-stock-video/industrial-machine-working-2230/ (Mixkit Stock Video Free License, commercial use stated on item page). Downloaded from the item-linked https://assets.mixkit.co/videos/2230/2230-720.mp4, trimmed and compressed as cnc-motion-v3.mp4. Poster and detail stills derive from this footage. These are illustrative industry visuals, not claimed as footage of Erasflans facilities.
+
+New image: public/images/flange-editorial-v3.webp, generated using the built-in imagegen tool. Prompt: Premium photorealistic 16:9 industrial brand scene, three machined silver aluminium flanges standing and overlapping on a graphite workbench, cool blue rim light, dark navy blurred workshop, flanges on the right, quiet left side, no text, logo or people. Illustrative brand scene, not a specific real factory.
+
+Product catalogue photographs remain unchanged.
