@@ -37,6 +37,15 @@ const heroFeatures = [
  { icon:Globe2, title:'KÜRESEL İHRACAT', text:'20+ ülkeye dünya çapında sevkiyat.' },
 ];
 
+const why = ['DN25 – DN3000 üretim aralığı','EN 1092-1, ANSI B16.5 ve DIN standart flanşlar','AISI 304/304L, 316/316L ve 310S paslanmaz çelik','Özel tasarım ve teknik resme göre üretim','Uluslararası ihracat — AB, Orta Doğu, Körfez','Rekabetçi fiyat ve zamanında teslimat garantisi','Tam teknik ve mühendislik desteği'];
+const grades = [
+ { name:'AISI 304 / 304L', label:'Genel amaçlı paslanmaz çelik', points:['İyi korozyon direnci','Mükemmel kaynak kabiliyeti','Gıda ve su hatlarına uygun'] },
+ { name:'AISI 316 / 316L', label:'Molibdenli, deniz ve kimya sınıfı', points:['Deniz suyu dayanımı','Klorür ve asit direnci','Kimya ve ilaç proseslerine uygun'] },
+ { name:'AISI 310S', label:'Yüksek sıcaklık kalitesi', points:['1100 °C’ye kadar oksidasyon direnci','Egzoz ve fırın uygulamaları','Isıl yorulma dayanımı'] },
+ { name:'AISI 321', label:'Titanyum stabilize kalite', points:['Taneler arası korozyon direnci','Yüksek sıcaklıkta kaynaklı yapılar','Talebe göre tedarik'] },
+];
+const stats = [{ value:'DN25–3000', label:'Üretim Aralığı' },{ value:'15+', label:'Yıllık Tecrübe' },{ value:'1000+', label:'Tamamlanan Proje' },{ value:'20+', label:'İhracat Ülkesi' }];
+
 function Index() {
  const { t, language } = useLanguage();
  const videoRef = useRef<HTMLVideoElement>(null);
@@ -58,7 +67,11 @@ function Index() {
     <Button variant="blueprint" size="icon" className="video-control" aria-label={label} title={label} onClick={() => playing ? videoRef.current?.pause() : play()}>{playing ? <Pause /> : <Play />}</Button>
   </section>
   <section className="benefits" aria-label={t('Üretim kabiliyetleri')}><div className="container benefits-inner">{benefits.map(b => <div className="benefit" key={b.title}><b.icon /><div><strong>{t(b.title)}</strong><p>{t(b.subtitle)}</p></div></div>)}</div></section>
-  <section className="container products-section"><div className="section-heading"><div><p className="section-label">{t('ÜRÜN GRUPLARIMIZ')}</p><h2>{t('Paslanmaz Çelik Flanş Çeşitlerimiz')}</h2></div><Link className="all-products" to="/urunler">{t('Tüm Ürünleri Gör')}<ArrowRight /></Link></div><ProductGrid limit={6} /></section>
-  <section className="container sectors"><div className="section-heading"><div><p className="section-label">{t('SEKTÖRLER')}</p><h2>{t('Hizmet Verdiğimiz Sektörler')}</h2></div><Link className="all-products" to="/sektorler">{t('Tümünü Gör')}<ArrowRight /></Link></div><div className="sector-grid">{sectors.slice(0, 5).map(x => <div className="sector-card" key={x.title}><Factory /><strong>{t(x.title)}</strong><p>{t(x.text)}</p></div>)}</div></section>
+  <section className="container products-section"><div className="section-heading"><div><p className="section-label">{t('ÜRÜN GRUPLARIMIZ')}</p><h2>{t('Paslanmaz Çelik Flanş Çeşitlerimiz')}</h2></div><Link className="all-products" to="/urunler">{t('Tüm Ürünleri Gör')}<ArrowRight /></Link></div><ProductGrid /></section>
+  <section className="container sectors"><div className="section-heading"><div><p className="section-label">{t('SEKTÖRLER')}</p><h2>{t('Hizmet Verdiğimiz Sektörler')}</h2></div><Link className="all-products" to="/sektorler">{t('Tümünü Gör')}<ArrowRight /></Link></div><div className="sector-grid">{sectors.map(x => <div className="sector-card" key={x.title}><Factory /><strong>{t(x.title)}</strong><p>{t(x.text)}</p></div>)}</div></section>
+   <section className="container why-section"><div><p className="section-label">{t('NEDEN ERAS FLANŞ')}</p><h2>{t('İhracat için üretilir.')}<br /><span className="hero-title-accent">{t('Şartnameye göre işlenir.')}</span></h2></div><ul className="why-list">{why.map(w => <li key={w}><BadgeCheck />{t(w)}</li>)}</ul></section>
+   <section className="container materials-home"><div className="section-heading"><div><p className="section-label">{t('MALZEMELER')}</p><h2>{t('Kullandığımız Paslanmaz Çelik Kaliteleri')}</h2></div><Link className="all-products" to="/malzemeler">{t('Tümünü Gör')}<ArrowRight /></Link></div><div className="grade-grid">{grades.map(g => <div className="grade-card" key={g.name}><span className="section-label">{t('KALİTE')}</span><h3>{g.name}</h3><p>{t(g.label)}</p><ul>{g.points.map(x => <li key={x}>› {t(x)}</li>)}</ul></div>)}</div></section>
+   <section className="stats-band"><div className="container stats-grid">{stats.map(s => <div key={s.label}><strong>{s.value}</strong><span>{t(s.label)}</span></div>)}</div></section>
+   <section className="container quote-band"><div><p className="section-label">{t('HIZLI TEKLİF')}</p><h2>{t('Teklif İsteyin')}</h2><p>{t('Projenizi anlatın, 24 saat içinde dönüş yapalım.')}</p></div><Button variant="industrial" asChild><Link to="/iletisim">{t('TEKLİF AL')}<ArrowRight /></Link></Button></section>
  </main>;
 }

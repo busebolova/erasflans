@@ -12,6 +12,6 @@
 - [x] Tüm sitede yazıları büyüt, menü her ekranda eksiksiz görünsün
 - [x] Telefonda alta sabit Ana Sayfa / İletişim menüsü
 - [x] Hero: erflans.com benzeri düzen; Hakkımızda/İletişim metinleri erflans.com'dan
-- [ ] Hero altına erflans.com'daki gibi 6 sütunlu özellik şeridi (ikon + başlık + kısa metin), aynı yazı boyutları
-- [ ] Hero'yu kullanıcının son yüklediği görseldeki (image-3) düzene göre birebir ayarla
-- [ ] Kodu https://github.com/busebolova/erasflans deposuna aktar (GitHub yetkisi kullanıcı tarafında gerekiyor)
+- [x] Hero altına erflans.com'daki gibi 6 sütunlu özellik şeridi (ikon + başlık + kısa metin), aynı yazı boyutları
+- [x] Hero'yu kullanıcının son yüklediği görseldeki (image-3) düzene göre birebir ayarla
+- [x] Kodu https://github.com/busebolova/erasflans deposuna aktar (lovable dalı, 126 dosya; main korunuyor)

@@ -17,6 +17,8 @@ import { Route as MalzemelerRouteImport } from './routes/malzemeler'
 import { Route as SektorlerRouteImport } from './routes/sektorler'
 import { Route as StandartlarRouteImport } from './routes/standartlar'
 import { Route as UretimRouteImport } from './routes/uretim'
+import { Route as TrIndexRouteImport } from './routes/tr.index'
+import { Route as TrSplatRouteImport } from './routes/tr.$'
 import { Route as UrunlerIndexRouteImport } from './routes/urunler.index'
 import { Route as UrunlerSlugRouteImport } from './routes/urunler.$slug'
 
@@ -60,6 +62,16 @@ const UretimRoute = UretimRouteImport.update({
   path: '/uretim',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TrIndexRoute = TrIndexRouteImport.update({
+  id: '/tr/',
+  path: '/tr/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TrSplatRoute = TrSplatRouteImport.update({
+  id: '/tr/$',
+  path: '/tr/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const UrunlerIndexRoute = UrunlerIndexRouteImport.update({
   id: '/urunler/',
   path: '/urunler/',
@@ -80,7 +92,9 @@ export interface FileRoutesByFullPath {
   '/sektorler': typeof SektorlerRoute
   '/standartlar': typeof StandartlarRoute
   '/uretim': typeof UretimRoute
+  '/tr/$': typeof TrSplatRoute
   '/urunler/$slug': typeof UrunlerSlugRoute
+  '/tr/': typeof TrIndexRoute
   '/urunler/': typeof UrunlerIndexRoute
 }
 export interface FileRoutesByTo {
@@ -92,7 +106,9 @@ export interface FileRoutesByTo {
   '/sektorler': typeof SektorlerRoute
   '/standartlar': typeof StandartlarRoute
   '/uretim': typeof UretimRoute
+  '/tr/$': typeof TrSplatRoute
   '/urunler/$slug': typeof UrunlerSlugRoute
+  '/tr': typeof TrIndexRoute
   '/urunler': typeof UrunlerIndexRoute
 }
 export interface FileRoutesById {
@@ -105,7 +121,9 @@ export interface FileRoutesById {
   '/sektorler': typeof SektorlerRoute
   '/standartlar': typeof StandartlarRoute
   '/uretim': typeof UretimRoute
+  '/tr/$': typeof TrSplatRoute
   '/urunler/$slug': typeof UrunlerSlugRoute
+  '/tr/': typeof TrIndexRoute
   '/urunler/': typeof UrunlerIndexRoute
 }
 export interface FileRouteTypes {
@@ -119,7 +137,9 @@ export interface FileRouteTypes {
     | '/sektorler'
     | '/standartlar'
     | '/uretim'
+    | '/tr/$'
     | '/urunler/$slug'
+    | '/tr/'
     | '/urunler/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -131,7 +151,9 @@ export interface FileRouteTypes {
     | '/sektorler'
     | '/standartlar'
     | '/uretim'
+    | '/tr/$'
     | '/urunler/$slug'
+    | '/tr'
     | '/urunler'
   id:
     | '__root__'
@@ -143,7 +165,9 @@ export interface FileRouteTypes {
     | '/sektorler'
     | '/standartlar'
     | '/uretim'
+    | '/tr/$'
     | '/urunler/$slug'
+    | '/tr/'
     | '/urunler/'
   fileRoutesById: FileRoutesById
 }
@@ -156,7 +180,9 @@ export interface RootRouteChildren {
   SektorlerRoute: typeof SektorlerRoute
   StandartlarRoute: typeof StandartlarRoute
   UretimRoute: typeof UretimRoute
+  TrSplatRoute: typeof TrSplatRoute
   UrunlerSlugRoute: typeof UrunlerSlugRoute
+  TrIndexRoute: typeof TrIndexRoute
   UrunlerIndexRoute: typeof UrunlerIndexRoute
 }
 
@@ -218,6 +244,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UretimRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/tr/': {
+      id: '/tr/'
+      path: '/tr'
+      fullPath: '/tr/'
+      preLoaderRoute: typeof TrIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tr/$': {
+      id: '/tr/$'
+      path: '/tr/$'
+      fullPath: '/tr/$'
+      preLoaderRoute: typeof TrSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/urunler/': {
       id: '/urunler/'
       path: '/urunler'
@@ -244,7 +284,9 @@ const rootRouteChildren: RootRouteChildren = {
   SektorlerRoute: SektorlerRoute,
   StandartlarRoute: StandartlarRoute,
   UretimRoute: UretimRoute,
+  TrSplatRoute: TrSplatRoute,
   UrunlerSlugRoute: UrunlerSlugRoute,
+  TrIndexRoute: TrIndexRoute,
   UrunlerIndexRoute: UrunlerIndexRoute,
 }
 export const routeTree = rootRouteImport
