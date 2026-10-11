@@ -1,0 +1,17 @@
+# Site tasks
+- [x] Create more realistic manufacturing footage and consistent product studio shots.
+- [x] Refine homepage hierarchy and verify media, Turkish/English and quotation interactions.
+- [x] Correct the ERAS logo, enable Turkish/English switching, and animate the hero as a video.
+- [x] Match uploaded Turkish ERAS FLANŞ design on desktop and mobile.
+- [x] Add verified flange products and source photography.
+- [x] Connect product details, search, catalog and quotation controls.
+- [x] Verify the page and interactions.
+- [x] Menüdeki her bölüm ayrı sayfa, tüm sayfalarda aynı sabit menü
+- [x] Daha iyi hero videosu
+- [x] Ürün sayfasında WhatsApp düğmesi görünür olsun
+- [x] Tüm sitede yazıları büyüt, menü her ekranda eksiksiz görünsün
+- [x] Telefonda alta sabit Ana Sayfa / İletişim menüsü
+- [x] Hero: erflans.com benzeri düzen; Hakkımızda/İletişim metinleri erflans.com'dan
+- [ ] Hero altına erflans.com'daki gibi 6 sütunlu özellik şeridi (ikon + başlık + kısa metin), aynı yazı boyutları
+- [ ] Hero'yu kullanıcının son yüklediği görseldeki (image-3) düzene göre birebir ayarla
+- [ ] Kodu https://github.com/busebolova/erasflans deposuna aktar (GitHub yetkisi kullanıcı tarafında gerekiyor)
